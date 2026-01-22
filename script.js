@@ -72,6 +72,17 @@ document.getElementById('btn-zoo').addEventListener('click', (e) => {
     render();
 });
 
+// 植物園の切り替え
+document.getElementById('btn-botanical').addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-button').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    
+    // ここが重要！
+    currentCategory = 'botanical'; 
+    
+    render(); 
+});
+
 // エリアボタンの切り替え
 document.getElementById('area-filters').addEventListener('click', (e) => {
     if (!e.target.classList.contains('area-button')) return;
